@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+
+# Build directories
+dist/
+build/
+
+# Dependency lock files (useful if you don't want to track these)
+package-lock.json
+yarn.lock
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+
+# Environment variable files
+.env
+
+# Optional IDE/editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Coverage reports
+coverage/
+
+# Miscellaneous
+*.log
