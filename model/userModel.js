@@ -25,7 +25,12 @@ const userModelScheema= new mongoose.Schema({
         message: {
           type: String,
           required: true
+        },
+        description:{
+          type:String,
+          required:true
         }
+        
       }
     ]
 })

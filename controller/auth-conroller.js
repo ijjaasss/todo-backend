@@ -102,7 +102,7 @@ export const updatedTodo =async(req,res)=>{
    
    const {id}=req.params
    const { todo } = req.body;
-  
+  console.log(todo)
    
    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).json({ message: 'Invalid ID' });
@@ -110,15 +110,17 @@ export const updatedTodo =async(req,res)=>{
    const user=await userModel.findById(id)
 
 
+
    user.todo=todo
    await user.save();
 res.status(200).json({ message: 'add task successfully', user });
 }
 
+
  export const deleteTodo= async(req,res)=>{
  try {
     const {id,todoId}=req.params
-    console.log(req.params);
+
 
     
     if (!id || !mongoose.Types.ObjectId.isValid(id)) {
@@ -134,6 +136,7 @@ res.status(200).json({ message: 'add task successfully', user });
         return res.status(404).send({ message: 'User not found' });
       }
       const removedTodo = user.todo.pull(todoId);
+      
       if (removedTodo.length === 0) {
         return res.status(404).send({ message: 'Todo item not found' });
       }
